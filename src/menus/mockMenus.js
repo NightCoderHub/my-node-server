@@ -1,0 +1,177 @@
+const mockMenus = [
+  {
+    id: 1,
+    path: "/frame",
+    name: "Frame",
+    component: "Layout",
+    redirect: "/frame/doc",
+    meta: {
+      icon: "internet",
+      roles: ["admin", "user"],
+      title: "外部页面",
+      hidden: false,
+    },
+    alwaysShow: true,
+    parentId: null,
+    children: [
+      {
+        id: 2,
+        path: "doc",
+        name: "Doc",
+        component: "IFrame",
+        redirect: null,
+        meta: {
+          roles: ["admin", "user"],
+          title: "使用文档（内嵌）",
+          hidden: false,
+          frameSrc: "https://tdesign.tencent.com/starter/docs/vue-next/get-started",
+        },
+        alwaysShow: false,
+        parentId: 1,
+      },
+      {
+        id: 3,
+        path: "TDesign",
+        name: "TDesign",
+        component: "IFrame",
+        redirect: null,
+        meta: {
+          roles: ["admin", "user"],
+          title: "TDesign 文档（内嵌）",
+          hidden: false,
+          frameSrc: "https://tdesign.tencent.com/vue-next/getting-started",
+        },
+        alwaysShow: false,
+        parentId: 1,
+      },
+      {
+        id: 4,
+        path: "TDesign2",
+        name: "TDesign2",
+        component: "IFrame",
+        redirect: null,
+        meta: {
+          roles: ["admin"],
+          title: "TDesign 文档（外链）",
+          hidden: false,
+          frameSrc: "https://tdesign.tencent.com/vue-next/getting-started",
+          frameBlank: true,
+        },
+        alwaysShow: false,
+        parentId: 1,
+      },
+    ],
+  },
+  {
+    id: 5,
+    path: "/system",
+    name: "system",
+    component: "Layout",
+    redirect: "/system/dictionary",
+    meta: {
+      icon: "setting",
+      roles: ["admin"],
+      title: "系统管理",
+      hidden: false,
+      orderNo: 6,
+    },
+    alwaysShow: true,
+    parentId: null,
+    children: [
+      {
+        id: 6,
+        path: "dictionary",
+        name: "SystemDictionary",
+        component: "/system/dictionary/index",
+        redirect: null,
+        meta: {
+          roles: ["admin"],
+          title: "数据字典管理",
+          hidden: false,
+        },
+        alwaysShow: false,
+        parentId: 5,
+      },
+      {
+        id: 7,
+        path: "route",
+        name: "SystemRoute",
+        component: "/system/permission/index",
+        redirect: null,
+        meta: {
+          roles: ["admin"],
+          title: "菜单管理",
+          hidden: false,
+        },
+        alwaysShow: false,
+        parentId: 5,
+      },
+    ],
+  },
+  {
+    id: 8,
+    path: "/dashboard",
+    component: "Layout",
+    redirect: "/dashboard/base",
+    name: "dashboard",
+    meta: {
+      title: "仪表盘",
+      icon: "dashboard",
+      sort: 0,
+    },
+    children: [
+      {
+        id: 9,
+        path: "base",
+        name: "DashboardBase",
+        component: "/dashboard/base/index",
+        meta: {
+          title: "概览仪表盘",
+        },
+      },
+      {
+        id: 10,
+        path: "detail",
+        name: "DashboardDetail",
+        component: "/dashboard/detail/index",
+        meta: {
+          title: "统计报表",
+        },
+      },
+    ],
+  },
+  {
+    id: 11,
+    path: "/forms",
+    component: "Layout",
+    redirect: "/forms/multistep-form",
+    name: "forms",
+    meta: {
+      title: "表单填写",
+      icon: "menu",
+      sort: 0,
+    },
+    children: [
+      {
+        id: 12,
+        path: "multistep-form",
+        name: "MultistepForms",
+        component: "/forms/multistep-forms/index",
+        meta: {
+          title: "多表单",
+        },
+      },
+      {
+        id: 13,
+        path: "work-experience-form",
+        name: "WorkExperienceForm",
+        component: "/forms/work-experience-form/index",
+        meta: {
+          title: "在线教育",
+        },
+      },
+    ],
+  },
+];
+
+module.exports = { mockMenus };
